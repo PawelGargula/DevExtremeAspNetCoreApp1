@@ -3,6 +3,15 @@
 <h2>Home</h2>
 
 @(Html.DevExtreme().DataGrid<SampleOrder>()
+    .FocusedRowEnabled(true)
+    .AllowColumnResizing(true)
+    .ColumnAutoWidth(true)
+    .AllowColumnReordering(true)
+    .ColumnChooser(c => c.Enabled(true))
+    .ColumnFixing(c => c.Enabled(true))
+    .ShowColumnLines(true)
+    .ShowRowLines(true)
+    .RowAlternationEnabled(true)
     .ShowBorders(true)
     .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
     .Columns(columns => {
@@ -15,7 +24,10 @@
     .Paging(p => p.PageSize(10))
     .FilterRow(f => f.Visible(true))
     .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => p.Visible(true))
+    .GroupPanel(p => {
+        p.Visible(true);
+        p.EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny");
+    })
     .Grouping(g => g.AutoExpandAll(false))
     .RemoteOperations(true)
     .Summary(s => s
