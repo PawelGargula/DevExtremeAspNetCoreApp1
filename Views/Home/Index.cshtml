@@ -10,19 +10,30 @@
     .ColumnChooser(c => {
         c.Enabled(true);
         c.Title("Wybór kolumny");
+        c.EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć");
     })
     .ColumnFixing(c => c.Enabled(true))
+    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+    .OnExporting("exporting")
     .ShowColumnLines(true)
     .ShowRowLines(true)
     .RowAlternationEnabled(true)
     .ShowBorders(true)
     .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
     .Columns(columns => {
-        columns.AddFor(m => m.OrderID);
+        columns.AddFor(m => m.OrderID)
+               .Alignment(HorizontalAlignment.Left);
         columns.AddFor(m => m.OrderDate);
         columns.AddFor(m => m.CustomerName);
         columns.AddFor(m => m.ShipCountry);
         columns.AddFor(m => m.ShipCity);
+    })
+    .Pager(pager => {
+        pager.Visible(true);
+        pager.DisplayMode(GridPagerDisplayMode.Full);
+        pager.ShowInfo(true);
+        pager.InfoText("Strona {0} z {1} ({2} obiektów)");
+        pager.ShowNavigationButtons(true);
     })
     .Paging(p => p.PageSize(10))
     .FilterRow(f => f.Visible(true))
@@ -33,12 +44,35 @@
     })
     .Grouping(g => g.AutoExpandAll(false))
     .RemoteOperations(true)
-    .Summary(s => s
+    .SearchPanel(panel => {
+        panel.Visible(true);
+        panel.Placeholder("Szukaj...");
+    }) 
+    .Selection(s => s.Mode(SelectionMode.Multiple))
+    /*.Summary(s => s
         .TotalItems(totalItems => {
             totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
         })
         .GroupItems(groupItems => {
             groupItems.Add().SummaryType(SummaryType.Count);
         })
-    )
+    )*/
 )
+
+<script>
+    function exporting(e) {
+        var workbook = new ExcelJS.Workbook();
+        var worksheet = workbook.addWorksheet('My data');
+
+        DevExpress.excelExporter.exportDataGrid({
+            component: e.component,
+            worksheet: worksheet,
+            autoFilterEnabled: true
+        }).then(function () {
+            workbook.xlsx.writeBuffer().then(function (buffer) {
+                saveAs(new Blob([buffer], { type: 'application/octet-stream' }), 'Data.xlsx');
+            });
+        });
+        e.cancel = true;
+    }
+</script>
