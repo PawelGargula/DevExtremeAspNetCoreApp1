@@ -3,23 +3,15 @@
 <h2>Home</h2>
 
 @(Html.DevExtreme().DataGrid<SampleOrder>()
-    .FocusedRowEnabled(true)
     .AllowColumnResizing(true)
-    .ColumnAutoWidth(true)
     .AllowColumnReordering(true)
+    .ColumnAutoWidth(true)
     .ColumnChooser(c => {
         c.Enabled(true);
         c.Title("Wybór kolumny");
         c.EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć");
     })
     .ColumnFixing(c => c.Enabled(true))
-    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
-    .OnExporting("exporting")
-    .ShowColumnLines(true)
-    .ShowRowLines(true)
-    .RowAlternationEnabled(true)
-    .ShowBorders(true)
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
     .Columns(columns => {
         columns.AddFor(m => m.OrderID)
                .Alignment(HorizontalAlignment.Left);
@@ -28,6 +20,17 @@
         columns.AddFor(m => m.ShipCountry);
         columns.AddFor(m => m.ShipCity);
     })
+    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
+    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+    .FilterRow(f => f.Visible(true))
+    .FocusedRowEnabled(true)
+    .Grouping(g => g.AutoExpandAll(false))
+    .GroupPanel(p => {
+        p.Visible(true);
+        p.EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny");
+    })
+    .HeaderFilter(f => f.Visible(true))
+    .OnExporting("exporting")
     .Pager(pager => {
         pager.Visible(true);
         pager.DisplayMode(GridPagerDisplayMode.Full);
@@ -36,19 +39,15 @@
         pager.ShowNavigationButtons(true);
     })
     .Paging(p => p.PageSize(10))
-    .FilterRow(f => f.Visible(true))
-    .HeaderFilter(f => f.Visible(true))
-    .GroupPanel(p => {
-        p.Visible(true);
-        p.EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny");
-    })
-    .Grouping(g => g.AutoExpandAll(false))
     .RemoteOperations(true)
     .SearchPanel(panel => {
         panel.Visible(true);
         panel.Placeholder("Szukaj...");
     }) 
     .Selection(s => s.Mode(SelectionMode.Multiple))
+    .ShowBorders(true)
+    .ShowColumnLines(true)
+    .ShowRowLines(true)
     /*.Summary(s => s
         .TotalItems(totalItems => {
             totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
@@ -57,6 +56,7 @@
             groupItems.Add().SummaryType(SummaryType.Count);
         })
     )*/
+    .RowAlternationEnabled(true)
 )
 
 <script>
