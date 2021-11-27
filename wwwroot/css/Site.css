@@ -1,6 +1,3 @@
-body {
-}
-
 .dx-header-row {
     background-color: #2f96b8;
     color: white;
@@ -10,6 +7,6 @@ body {
     font-size: larger;
 }
 
-.dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort, .dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort-indicator, .dx-datagrid-headers .dx-datagrid-table .dx-row>td:hover .dx-datagrid-text-content {
+.dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort, .dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort-indicator, .dx-datagrid-headers .dx-datagrid-table .dx-row>td:hover .dx-datagrid-text-content, .dx-datagrid .dx-header-filter-empty, .dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover .dx-sort {
     color: white;
 }
