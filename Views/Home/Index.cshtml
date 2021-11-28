@@ -6,11 +6,10 @@
     .AllowColumnResizing(true)
     .AllowColumnReordering(true)
     .ColumnAutoWidth(true)
-    .ColumnChooser(c => {
-        c.Enabled(true);
-        c.Title("Wybór kolumny");
-        c.EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć");
-    })
+    .ColumnChooser(c => c
+        .Enabled(true)
+        .Title("Wybór kolumny")
+        .EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć"))
     .ColumnFixing(c => c.Enabled(true))
     .Columns(columns => {
         columns.AddFor(m => m.OrderID)
@@ -21,41 +20,43 @@
         columns.AddFor(m => m.ShipCity);
     })
     .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
-    .Export(e => e.Enabled(true).AllowExportSelectedData(true))
+    .Export(e => e
+        .Enabled(true)
+        .AllowExportSelectedData(true)
+        .Texts(t => t
+            .ExportAll("Eksportuj wszystkie dane")
+            .ExportSelectedRows("Eksportuj wybrane wiersze")))
     .FilterRow(f => f.Visible(true))
     .FocusedRowEnabled(true)
     .Grouping(g => g.AutoExpandAll(false))
-    .GroupPanel(p => {
-        p.Visible(true);
-        p.EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny");
-    })
+    .GroupPanel(p => p
+        .Visible(true)
+        .EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny"))
     .HeaderFilter(f => f.Visible(true))
     .OnExporting("exporting")
-    .Pager(pager => {
-        pager.Visible(true);
-        pager.DisplayMode(GridPagerDisplayMode.Full);
-        pager.ShowInfo(true);
-        pager.InfoText("Strona {0} z {1} ({2} obiektów)");
-        pager.ShowNavigationButtons(true);
-    })
+    .Pager(p => p
+        .Visible(true)
+        .DisplayMode(GridPagerDisplayMode.Full)
+        .ShowInfo(true)
+        .InfoText("Strona {0} z {1} ({2} obiektów)")
+        .ShowNavigationButtons(true))
     .Paging(p => p.PageSize(10))
     .RemoteOperations(true)
-    .SearchPanel(panel => {
-        panel.Visible(true);
-        panel.Placeholder("Szukaj...");
-    }) 
+    @* .SearchPanel(p =>
+        p.Visible(true)
+         .Placeholder("Szukaj..."))  *@
     .Selection(s => s.Mode(SelectionMode.Multiple))
     .ShowBorders(true)
     .ShowColumnLines(true)
     .ShowRowLines(true)
-    /*.Summary(s => s
+    @* .Summary(s => s
         .TotalItems(totalItems => {
             totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
         })
         .GroupItems(groupItems => {
             groupItems.Add().SummaryType(SummaryType.Count);
         })
-    )*/
+    ) *@
     .RowAlternationEnabled(true)
 )
 
