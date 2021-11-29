@@ -1,5 +1,6 @@
 .dx-header-row {
-    background-color: #2f96b8;
+    /*background-color: #2f96b8;*/
+    background: linear-gradient(to bottom right, #00bfff, #2f96b8);
     color: white;
 }
 
