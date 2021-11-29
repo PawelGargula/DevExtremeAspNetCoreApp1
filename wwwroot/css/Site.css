@@ -11,3 +11,8 @@
 .dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort, .dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort-indicator, .dx-datagrid-headers .dx-datagrid-table .dx-row>td:hover .dx-datagrid-text-content, .dx-datagrid .dx-header-filter-empty, .dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover .dx-sort {
     color: white;
 }
+
+.dx-datagrid-filter-row {
+    background-color: #def6ff;
+    background: linear-gradient( #def6ff, white);
+}
