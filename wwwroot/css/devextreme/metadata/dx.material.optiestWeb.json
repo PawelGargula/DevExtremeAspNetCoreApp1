@@ -33,14 +33,6 @@
             "value": "rgba(255, 255, 230, 1)"
         },
         {
-            "key": "$datagrid-row-selected-color",
-            "value": "rgba(11, 119, 156, 1)"
-        },
-        {
-            "key": "$datagrid-row-selected-border-color",
-            "value": "rgba(11, 119, 156, 1)"
-        },
-        {
             "key": "$datagrid-columnchooser-item-color",
             "value": "rgba(0, 0, 0, 1)"
         },
@@ -63,10 +55,18 @@
         {
             "key": "$datagrid-group-row-color",
             "value": "rgba(0, 0, 0, 0.7)"
+        },
+        {
+            "key": "$datagrid-row-selected-color",
+            "value": "rgba(47, 150, 184, 1)"
+        },
+        {
+            "key": "$datagrid-row-selected-border-color",
+            "value": "rgba(47, 150, 184, 1)"
         }
     ],
     "baseTheme": "material.blue.light.compact",
-    "outputColorScheme": "my-scheme",
+    "outputColorScheme": "optiestWeb",
     "makeSwatch": false,
     "version": "21.2.3",
     "widgets": [],
