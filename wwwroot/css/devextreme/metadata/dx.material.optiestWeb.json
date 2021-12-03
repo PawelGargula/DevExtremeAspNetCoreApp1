@@ -57,14 +57,6 @@
             "value": "rgba(0, 0, 0, 0.7)"
         },
         {
-            "key": "$datagrid-row-selected-color",
-            "value": "rgba(47, 150, 184, 1)"
-        },
-        {
-            "key": "$datagrid-row-selected-border-color",
-            "value": "rgba(47, 150, 184, 1)"
-        },
-        {
             "key": "$form-field-item-color",
             "value": "rgba(0, 0, 0, 1)"
         },
@@ -151,10 +143,18 @@
         {
             "key": "$tagbox-tag-button-remove-bg",
             "value": "rgba(0, 0, 0, 0.36)"
+        },
+        {
+            "key": "$datagrid-row-selected-color",
+            "value": "black"
+        },
+        {
+            "key": "$datagrid-row-selected-border-color",
+            "value": "rgba(0, 0, 0, 1)"
         }
     ],
     "baseTheme": "material.blue.light.compact",
-    "outputColorScheme": "optiestWebAll",
+    "outputColorScheme": "optiestWeb",
     "makeSwatch": false,
     "version": "21.2.3",
     "widgets": [],
