@@ -21,18 +21,6 @@
             "value": "700"
         },
         {
-            "key": "$datagrid-row-focused-bg",
-            "value": "rgba(47, 184, 150, 1)"
-        },
-        {
-            "key": "$datagrid-focused-border-color",
-            "value": "rgba(47, 184, 150, 1)"
-        },
-        {
-            "key": "$datagrid-selection-bg",
-            "value": "rgba(255, 255, 230, 1)"
-        },
-        {
             "key": "$datagrid-columnchooser-item-color",
             "value": "rgba(0, 0, 0, 1)"
         },
@@ -146,15 +134,27 @@
         },
         {
             "key": "$datagrid-row-selected-color",
-            "value": "black"
+            "value": "rgba(0, 0, 0, 1)"
         },
         {
             "key": "$datagrid-row-selected-border-color",
             "value": "rgba(0, 0, 0, 1)"
+        },
+        {
+            "key": "$datagrid-selection-bg",
+            "value": "rgba(255, 255, 230, 1)"
+        },
+        {
+            "key": "$datagrid-row-focused-bg",
+            "value": "rgba(36, 137, 171, 1)"
+        },
+        {
+            "key": "$datagrid-focused-border-color",
+            "value": "rgba(36, 137, 171, 1)"
         }
     ],
     "baseTheme": "material.blue.light.compact",
-    "outputColorScheme": "optiestWeb",
+    "outputColorScheme": "optiestWeb2",
     "makeSwatch": false,
     "version": "21.2.3",
     "widgets": [],

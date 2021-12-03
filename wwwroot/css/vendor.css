@@ -12028,7 +12028,7 @@ It is no longer required.
   width: 60%;
 }
 .dx-field-label {
-  color: #757575;
+  color: rgba(0,0,0,.9);
   font-size: 12px;
   cursor: default;
   -webkit-align-self: center;
@@ -13825,7 +13825,7 @@ It is no longer required.
 .dx-scrollable-scroll-content {
   width: 100%;
   height: 100%;
-  background-color: rgba(191,191,191,.7);
+  background-color: rgba(47,150,184,.5);
   -webkit-box-shadow: 0 0 0 1px transparent;
   box-shadow: 0 0 0 1px transparent;
 }
@@ -14773,7 +14773,7 @@ It is no longer required.
   padding: 6px 12px;
   min-width: 82px;
   background-color: #f7f7f7;
-  color: rgba(0,0,0,.54);
+  color: rgba(0,0,0,.7);
 }
 .dx-tab.dx-state-hover {
   background-color: #ededed;
@@ -14781,7 +14781,7 @@ It is no longer required.
 .dx-tab .dx-icon {
   display: block;
   -webkit-user-drag: none;
-  color: rgba(0,0,0,.54);
+  color: rgba(0,0,0,.7);
   vertical-align: middle;
   width: 18px;
   height: 18px;
@@ -15031,7 +15031,7 @@ It is no longer required.
   text-align: left;
   cursor: text;
   pointer-events: none;
-  color: #949494;
+  color: #000;
   font-size: 13px;
 }
 .dx-placeholder::before {
@@ -15579,7 +15579,7 @@ It is no longer required.
 .dx-texteditor-label {
   position: absolute;
   font-size: 11px;
-  color: #949494;
+  color: #000;
   white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -17622,11 +17622,11 @@ It is no longer required.
   background-size: 16px 16px;
   padding: 0;
   text-align: center;
-  color: #949494;
+  color: #000;
 }
 .dx-searchbox .dx-icon-search::before {
   content: "\f027";
-  color: rgba(0,0,0,.54);
+  color: rgba(0,0,0,.7);
 }
 .dx-searchbox.dx-editor-underlined .dx-icon-search {
   left: 0;
@@ -17872,7 +17872,7 @@ It is no longer required.
 }
 .dx-dropdowneditor-button.dx-state-active .dx-dropdowneditor-icon,
 .dx-dropdowneditor.dx-dropdowneditor-active .dx-dropdowneditor-icon {
-  color: rgba(0,0,0,.54);
+  color: rgba(0,0,0,.7);
   opacity: 1;
   font: 18px/18px DXIcons;
   width: 18px;
@@ -18259,7 +18259,7 @@ It is no longer required.
   transform: scale(1);
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected {
-  background-color: rgba(0,0,0,.12);
+  background-color: rgba(47,150,184,.2);
   color: #000;
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected.dx-state-hover:not(.dx-state-focused) {
@@ -18267,7 +18267,7 @@ It is no longer required.
   color: #000;
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
   color: #000;
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused.dx-list-item-selected {
@@ -18276,7 +18276,7 @@ It is no longer required.
 }
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-active,
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-active .dx-list-slide-item-content {
-  background-color: #ccc;
+  background-color: rgba(47,150,184,.3);
 }
 .dx-list-group:not(.dx-list-group-collapsed):not(:last-child) {
   padding-bottom: 4px;
@@ -18333,12 +18333,12 @@ It is no longer required.
 }
 .dx-list-item.dx-state-active,
 .dx-list-item.dx-state-hover {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
   color: #000;
 }
 .dx-list-item.dx-state-active .dx-list-switchable-delete-button-inner-wrapper,
 .dx-list-item.dx-state-hover .dx-list-switchable-delete-button-inner-wrapper {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
 }
 .dx-list-item:first-of-type {
   border-top: none;
@@ -18639,7 +18639,7 @@ It is no longer required.
   transform: scale(1);
 }
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected {
-  background-color: rgba(0,0,0,.12);
+  background-color: rgba(47,150,184,.2);
   color: #000;
 }
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected.dx-state-hover:not(.dx-state-focused) {
@@ -18647,7 +18647,7 @@ It is no longer required.
   color: #000;
 }
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
   color: #000;
 }
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-focused.dx-list-item-selected {
@@ -18656,7 +18656,7 @@ It is no longer required.
 }
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-active,
 .dx-device-mobile .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-active .dx-list-slide-item-content {
-  background-color: #ccc;
+  background-color: rgba(47,150,184,.3);
 }
 .dx-device-mobile .dx-list-group:not(.dx-list-group-collapsed):not(:last-child) {
   padding-bottom: 4px;
@@ -18713,12 +18713,12 @@ It is no longer required.
 }
 .dx-device-mobile .dx-list-item.dx-state-active,
 .dx-device-mobile .dx-list-item.dx-state-hover {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
   color: #000;
 }
 .dx-device-mobile .dx-list-item.dx-state-active .dx-list-switchable-delete-button-inner-wrapper,
 .dx-device-mobile .dx-list-item.dx-state-hover .dx-list-switchable-delete-button-inner-wrapper {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.08);
 }
 .dx-device-mobile .dx-list-item:first-of-type {
   border-top: none;
@@ -20480,7 +20480,7 @@ It is no longer required.
   background-color: rgba(0,0,0,.14);
 }
 .dx-treeview-item-without-checkbox.dx-state-focused > .dx-treeview-item {
-  background-color: rgba(0,0,0,.04);
+  background-color: rgba(47,150,184,.1);
   color: #000;
 }
 .dx-treeview-item {
@@ -20541,6 +20541,20 @@ It is no longer required.
   margin-top: -9px;
   left: 50%;
   margin-left: -9px;
+}
+.dx-menu-base {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  text-align: left;
+  color: #000;
+  font-weight: 400;
+  font-size: 13px;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
+  line-height: 1.2857;
 }
 .dx-menu-base .dx-menu-item-wrapper,
 .dx-menu-base .dx-menu-items-container {
@@ -20604,14 +20618,14 @@ It is no longer required.
   right: auto;
 }
 .dx-menu-item {
-  color: #757575;
+  color: #000;
 }
 .dx-menu-item.dx-state-focused,
 .dx-menu-item.dx-state-hover {
   background-color: rgba(0,0,0,.04);
 }
 .dx-menu-item-selected {
-  background-color: #e0e0e0;
+  background-color: rgba(47,150,184,.1);
   color: #000;
 }
 .dx-menu-item-selected.dx-state-focused {
@@ -20620,22 +20634,8 @@ It is no longer required.
 .dx-menu-item-expanded,
 .dx-menu-item-expanded.dx-state-focused,
 .dx-menu-item-expanded.dx-state-hover {
-  color: #757575;
-  background-color: #e0e0e0;
-}
-.dx-menu-base {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: transparent;
-  text-align: left;
   color: #000;
-  font-weight: 400;
-  font-size: 13px;
-  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
-  line-height: 1.2857;
+  background-color: rgba(47,150,184,.1);
 }
 .dx-menu-base input,
 .dx-menu-base textarea {
@@ -20673,7 +20673,7 @@ It is no longer required.
 }
 .dx-menu {
   position: relative;
-  color: #757575;
+  color: #000;
 }
 .dx-menu-horizontal {
   height: 100%;
@@ -23003,7 +23003,7 @@ It is no longer required.
   top: 49px;
 }
 .dx-lookup-empty .dx-lookup-field {
-  color: #949494;
+  color: #000;
 }
 .dx-lookup-popup-search .dx-list {
   height: calc(100% - 36px);
@@ -23113,7 +23113,7 @@ It is no longer required.
   padding: 4px 32px 4px 8px;
   min-width: 40px;
   background-color: #e0e0e0;
-  color: rgba(0,0,0,.6);
+  color: rgba(0,0,0,.8);
   border-radius: 16px;
 }
 .dx-tag-content::before {
@@ -25848,7 +25848,7 @@ It is no longer required.
   height: 100%;
 }
 .dx-datagrid-filter-row .dx-menu .dx-overlay-content {
-  color: #757575;
+  color: #000;
 }
 .dx-datagrid-filter-row .dx-filter-modified {
   background-color: rgba(139,195,74,.32);
@@ -26141,7 +26141,7 @@ It is no longer required.
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > td,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > tr > td {
   background-color: #ffffe6;
-  color: #2f96b8;
+  color: #000;
 }
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused) > td.dx-datagrid-group-space,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused) > tr > td.dx-datagrid-group-space,
@@ -26153,8 +26153,8 @@ It is no longer required.
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused) > tr > td.dx-pointer-events-none,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > td.dx-pointer-events-none,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > tr > td.dx-pointer-events-none {
-  border-left-color: #2f96b8;
-  border-right-color: #2f96b8;
+  border-left-color: #000;
+  border-right-color: #000;
 }
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover:not(.dx-row-lines) > td,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):not(.dx-row-lines) > td {
@@ -26163,7 +26163,7 @@ It is no longer required.
 }
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused).dx-row-lines > td,
 .dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover.dx-row-lines > td {
-  border-bottom-color: #2f96b8;
+  border-bottom-color: #000;
 }
 .dx-datagrid-rowsview.dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-both .dx-scrollable-wrapper .dx-scrollable-container .dx-scrollable-content {
   padding-right: 0;
@@ -26302,7 +26302,7 @@ It is no longer required.
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row > tr > td,
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row:hover > td,
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row:hover > tr > td {
-  border-right-color: #2f96b8;
+  border-right-color: #000;
 }
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row > td:not(.dx-focused).dx-datagrid-group-space,
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row > tr > td:not(.dx-focused).dx-datagrid-group-space,
@@ -26314,7 +26314,7 @@ It is no longer required.
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row > tr > td.dx-pointer-events-none,
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row:hover > td.dx-pointer-events-none,
 .dx-rtl .dx-datagrid-rowsview .dx-selection.dx-row:hover > tr > td.dx-pointer-events-none {
-  border-left-color: #2f96b8;
+  border-left-color: #000;
 }
 .dx-rtl .dx-datagrid-rowsview.dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-both .dx-scrollable-wrapper .dx-scrollable-container .dx-scrollable-content {
   padding-left: 0;
@@ -28224,7 +28224,7 @@ input.dx-hidden {
   height: 100%;
 }
 .dx-treelist-filter-row .dx-menu .dx-overlay-content {
-  color: #757575;
+  color: #000;
 }
 .dx-treelist-filter-row .dx-filter-modified {
   background-color: rgba(139,195,74,.32);
@@ -28546,7 +28546,7 @@ input.dx-hidden {
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > td,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > tr > td {
   background-color: #ffffe6;
-  color: #2f96b8;
+  color: #000;
 }
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused) > td.dx-treelist-group-space,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused) > tr > td.dx-treelist-group-space,
@@ -28558,8 +28558,8 @@ input.dx-hidden {
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused) > tr > td.dx-pointer-events-none,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > td.dx-pointer-events-none,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > tr > td.dx-pointer-events-none {
-  border-left-color: #2f96b8;
-  border-right-color: #2f96b8;
+  border-left-color: #000;
+  border-right-color: #000;
 }
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover:not(.dx-row-lines) > td,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):not(.dx-row-lines) > td {
@@ -28568,7 +28568,7 @@ input.dx-hidden {
 }
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused).dx-row-lines > td,
 .dx-treelist-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover.dx-row-lines > td {
-  border-bottom-color: #2f96b8;
+  border-bottom-color: #000;
 }
 .dx-treelist-rowsview.dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-both .dx-scrollable-wrapper .dx-scrollable-container .dx-scrollable-content {
   padding-right: 0;
@@ -28707,7 +28707,7 @@ input.dx-hidden {
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row > tr > td,
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row:hover > td,
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row:hover > tr > td {
-  border-right-color: #2f96b8;
+  border-right-color: #000;
 }
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row > td:not(.dx-focused).dx-treelist-group-space,
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row > tr > td:not(.dx-focused).dx-treelist-group-space,
@@ -28719,7 +28719,7 @@ input.dx-hidden {
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row > tr > td.dx-pointer-events-none,
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row:hover > td.dx-pointer-events-none,
 .dx-rtl .dx-treelist-rowsview .dx-selection.dx-row:hover > tr > td.dx-pointer-events-none {
-  border-left-color: #2f96b8;
+  border-left-color: #000;
 }
 .dx-rtl .dx-treelist-rowsview.dx-scrollable-scrollbars-alwaysvisible.dx-scrollable-both .dx-scrollable-wrapper .dx-scrollable-container .dx-scrollable-content {
   padding-left: 0;
@@ -33147,11 +33147,11 @@ input.dx-hidden {
   padding-right: 0;
 }
 .dx-field-item-label-text {
-  color: rgba(0,0,0,.6);
+  color: #000;
 }
 .dx-field-item-help-text {
   white-space: normal;
-  color: rgba(0,0,0,.6);
+  color: #000;
   padding: 6px 11px 2px;
   font-style: normal;
 }
@@ -33163,7 +33163,7 @@ input.dx-hidden {
 .dx-field-item-optional-mark,
 .dx-field-item-required .dx-label>span::after,
 .dx-field-item-required-mark {
-  color: rgba(0,0,0,.6);
+  color: #000;
 }
 .dx-filterbuilder.dx-rtl .dx-filterbuilder-action-icon,
 .dx-filterbuilder.dx-rtl .dx-filterbuilder-text {
@@ -33296,11 +33296,11 @@ input.dx-hidden {
 }
 .dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text .dx-filterbuilder-item-value-text,
 .dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text .dx-filterbuilder-item-value-text:hover {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.2);
 }
 .dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text .dx-filterbuilder-item-value-text.dx-state-active,
 .dx-filterbuilder .dx-filterbuilder-group .dx-filterbuilder-text .dx-filterbuilder-item-value-text:focus {
-  background-color: #000;
+  background-color: rgba(0,0,0,.9);
   color: #fff;
 }
 .dx-filterbuilder .dx-filterbuilder-group .dx-icon-plus {
@@ -33428,7 +33428,7 @@ input.dx-hidden {
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.2);
 }
 .dx-drawer-push.dx-drawer-bottom .dx-drawer-panel-content {
   top: auto;
@@ -33872,7 +33872,7 @@ input.dx-hidden {
   pointer-events: none;
   position: absolute;
   right: 15px;
-  color: #949494;
+  color: #000;
 }
 .dx-htmleditor-content.ql-blank::after {
   content: attr(data-placeholder);
