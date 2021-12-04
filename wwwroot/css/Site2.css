@@ -20,6 +20,6 @@
     background: var(--gradient-lightblue);
 }
 
-.dx-datagrid-column-chooser-list .dx-empty-message, .dx-device-mobile .dx-datagrid-column-chooser-list .dx-empty-message {
+.dx-datagrid-column-chooser-list .dx-empty-message, .dx-device-mobile .dx-datagrid-column-chooser-list .dx-empty-message, .dx-datagrid .dx-header-filter:not(.dx-header-filter-empty), .dx-datagrid-container .dx-header-filter:not(.dx-header-filter-empty) {
     color: black;
 }
