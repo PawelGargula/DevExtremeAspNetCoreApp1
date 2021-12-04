@@ -1,0 +1,16 @@
+.dx-header-row {
+    background: linear-gradient(to bottom right, #2489ab, #2f96b8);
+    color: white;
+}
+
+.dx-datagrid-headers .dx-datagrid-table .dx-row > td {
+    font-size: larger;
+}
+
+.dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort, .dx-datagrid-headers .dx-datagrid-table .dx-row>td .dx-sort-indicator, .dx-datagrid-headers .dx-datagrid-table .dx-row>td:hover .dx-datagrid-text-content, .dx-datagrid .dx-header-filter-empty, .dx-datagrid-headers .dx-datagrid-table .dx-row > td:hover .dx-sort {
+    color: white;
+}
+
+.dx-datagrid-filter-row {
+    background: linear-gradient( #def6ff, white);
+}
