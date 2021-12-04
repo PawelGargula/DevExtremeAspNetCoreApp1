@@ -1,5 +1,10 @@
-.dx-header-row, .dx-datagrid-group-panel .dx-group-panel-item {
-    background: linear-gradient(to bottom right, #2489ab, #2f96b8);
+:root {
+    --gradient-darkblue: linear-gradient(to bottom right, #2489ab, #2f96b8);
+    --gradient-lightblue: linear-gradient( #def6ff, white);
+}
+
+.dx-header-row, .dx-datagrid-group-panel .dx-group-panel-item, .dx-datagrid-column-chooser .dx-overlay-content .dx-popup-content .dx-column-chooser-item {
+    background: var(--gradient-darkblue);
     color: white;
 }
 
@@ -11,6 +16,10 @@
     color: white;
 }
 
-.dx-datagrid-filter-row {
-    background: linear-gradient( #def6ff, white);
+.dx-datagrid-filter-row, .dx-datagrid-column-chooser .dx-overlay-content .dx-popup-title, .dx-popup-bottom.dx-toolbar {
+    background: var(--gradient-lightblue);
+}
+
+.dx-datagrid-column-chooser-list .dx-empty-message, .dx-device-mobile .dx-datagrid-column-chooser-list .dx-empty-message {
+    color: black;
 }
