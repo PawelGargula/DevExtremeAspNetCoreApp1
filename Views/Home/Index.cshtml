@@ -13,11 +13,11 @@
     .ColumnFixing(c => c.Enabled(true))
     .Columns(columns => {
         columns.AddFor(m => m.OrderID)
-               .Alignment(HorizontalAlignment.Left);
-        columns.AddFor(m => m.OrderDate);
-        columns.AddFor(m => m.CustomerName);
-        columns.AddFor(m => m.ShipCountry);
-        columns.AddFor(m => m.ShipCity);
+               .Alignment(HorizontalAlignment.Left).Caption("Kod kreskowy");
+        columns.AddFor(m => m.OrderDate).Caption("Data przyjcia");
+        columns.AddFor(m => m.ShipCity).Caption("Lokalizacja");
+        columns.AddFor(m => m.ShipCountry).Caption("Jednostka organizacyjna");
+        columns.AddFor(m => m.CustomerName).Caption("Osoba odpowiedzialna");
     })
     .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
     .Export(e => e
@@ -45,7 +45,7 @@
     @* .SearchPanel(p =>
         p.Visible(true)
          .Placeholder("Szukaj..."))  *@
-    .Selection(s => s.Mode(SelectionMode.Multiple))
+    @* .Selection(s => s.Mode(SelectionMode.Multiple)) *@
     .ShowBorders(true)
     .ShowColumnLines(true)
     .ShowRowLines(true)
