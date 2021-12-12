@@ -1,6 +1,9 @@
-@using DevExtremeAspNetCoreApp1.Models
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
+}
 
-<h2>Home</h2>
+@using DevExtremeAspNetCoreApp1.Models
 
 @(Html.DevExtreme().DataGrid<SampleOrder>()
     .AllowColumnResizing(true)
@@ -64,7 +67,6 @@
     function exporting(e) {
         var workbook = new ExcelJS.Workbook();
         var worksheet = workbook.addWorksheet('My data');
-
         DevExpress.excelExporter.exportDataGrid({
             component: e.component,
             worksheet: worksheet,

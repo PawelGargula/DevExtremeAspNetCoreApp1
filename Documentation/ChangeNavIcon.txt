@@ -1,0 +1,4 @@
+Find icon you want on https://fontawesome.com/v5.15/icons (For example "tags")
+Then click on it. There will be a HTML to copy, for example <i class="fas fa-tags"></i>. Copy the class name ("fas fa-tags").
+In our i tag ("<i class="nav-icon font_awsome_class"></i>") change font_awsome_class to copied class from fontawesome.
+After change, it shoud looks like this "<i class="nav-icon fas fa-tags"></i>". Your icon shoud change.
