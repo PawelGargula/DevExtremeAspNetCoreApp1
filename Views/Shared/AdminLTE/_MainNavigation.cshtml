@@ -1,11 +1,12 @@
 <style>
   details[open] summary ~ * {
-  animation: sweep .5s ease-in-out;
+  animation: collapsing 0.5s ease-in-out;
 }
 
-@@keyframes sweep {
-  0%    {opacity: 0; margin-left: -10px;}
-  100%  {opacity: 1; margin-left: 0px;}
+@@keyframes collapsing {
+  0%    { opacity: 0; font-size: 0; }
+  50%   { opacity: 0; font-size: 1em; margin-left: -10px; }
+  100%  { opacity: 1; margin-left: 0px; }
 }
 </style>
 
