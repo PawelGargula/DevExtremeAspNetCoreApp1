@@ -16,25 +16,25 @@
     .ColumnFixing(c => c.Enabled(true))
     .Columns(columns => {
         columns.AddFor(m => m.OrderID)
-               .Alignment(HorizontalAlignment.Left).Caption("Kod kreskowy");
-        columns.AddFor(m => m.OrderDate).Caption("Data przyjcia");
-        columns.AddFor(m => m.ShipCity).Caption("Lokalizacja");
-        columns.AddFor(m => m.ShipCountry).Caption("Jednostka organizacyjna");
-        columns.AddFor(m => m.CustomerName).Caption("Osoba odpowiedzialna");
+        .Alignment(HorizontalAlignment.Left);
+        columns.AddFor(m => m.OrderDate);
+        columns.AddFor(m => m.ShipCity);
+        columns.AddFor(m => m.ShipCountry);
+        columns.AddFor(m => m.CustomerName);
     })
     .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
     .Export(e => e
         .Enabled(true)
         .AllowExportSelectedData(true)
         .Texts(t => t
-            .ExportAll("Eksportuj wszystkie dane")
-            .ExportSelectedRows("Eksportuj wybrane wiersze")))
+        .ExportAll("Eksportuj wszystkie dane")
+        .ExportSelectedRows("Eksportuj wybrane wiersze")))
     .FilterRow(f => f.Visible(true))
     .FocusedRowEnabled(true)
     .Grouping(g => g.AutoExpandAll(false))
     .GroupPanel(p => p
-        .Visible(true)
-        .EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny"))
+    .Visible(true)
+    .EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny"))
     .HeaderFilter(f => f.Visible(true))
     .OnExporting("exporting")
     .Pager(p => p
@@ -45,24 +45,46 @@
         .ShowNavigationButtons(true))
     .Paging(p => p.PageSize(10))
     .RemoteOperations(true)
-    @* .SearchPanel(p =>
-        p.Visible(true)
-         .Placeholder("Szukaj..."))  *@
-    @* .Selection(s => s.Mode(SelectionMode.Multiple)) *@
+        @* .SearchPanel(p =>
+            p.Visible(true)
+            .Placeholder("Szukaj...")) *@
+        @* .Selection(s => s.Mode(SelectionMode.Multiple)) *@
     .ShowBorders(true)
     .ShowColumnLines(true)
     .ShowRowLines(true)
-    @* .Summary(s => s
-        .TotalItems(totalItems => {
-            totalItems.AddFor(m => m.ShipCity).SummaryType(SummaryType.Count);
-        })
-        .GroupItems(groupItems => {
-            groupItems.Add().SummaryType(SummaryType.Count);
-        })
-    ) *@
+    .StateStoring(s => s
+        .Enabled(true)
+        .Type(StateStoringType.Custom)
+        .StorageKey("storage")
+        .CustomSave("omitFiltersOnSave")
+        .CustomLoad("loadStorage"))
     .RowAlternationEnabled(true)
 )
 
+@* Custom storage *@
+<script>
+    function omitFiltersOnSave(state) {
+        if (state) {
+            for (let i = 0; i < state.columns.length; i++) {
+                // Properties of stateStoring https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxDataGrid/Configuration/stateStoring/
+                
+                // Removes the column's filter value displayed in the filter row.
+                state.columns[i].filterValue = null;
+                // Removes values selected in the column's header filter.
+                state.columns[i].filterValues = null;
+                // Removes filter operation that applies when users use the filter row to filter the column ('=', 'contains' etc)
+                state.columns[i].selectedFilterOperation = null;
+            }
+        }
+        localStorage.setItem("storage", JSON.stringify(state));
+    }
+
+    function loadStorage() {
+        return JSON.parse(localStorage.getItem("storage"));
+    }
+</script>
+
+@* Exporting *@
 <script>
     function exporting(e) {
         var workbook = new ExcelJS.Workbook();
