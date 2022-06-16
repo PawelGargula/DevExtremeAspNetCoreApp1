@@ -55,7 +55,7 @@
     .StateStoring(s => s
         .Enabled(true)
         .Type(StateStoringType.Custom)
-        .StorageKey("storage")
+        .StorageKey("dataGridState")
         .CustomSave("omitFiltersOnSave")
         .CustomLoad("loadStorage"))
     .RowAlternationEnabled(true)
@@ -76,11 +76,11 @@
                 state.columns[i].selectedFilterOperation = null;
             }
         }
-        localStorage.setItem("storage", JSON.stringify(state));
+        localStorage.setItem("dataGridState", JSON.stringify(state));
     }
 
     function loadStorage() {
-        return JSON.parse(localStorage.getItem("storage"));
+        return JSON.parse(localStorage.getItem("dataGridState"));
     }
 </script>
 
