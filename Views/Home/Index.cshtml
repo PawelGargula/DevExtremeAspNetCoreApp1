@@ -1,65 +1,67 @@
 @{
     ViewData["Title"] = "Home Page";
-    Layout = "~/Views/Shared/AdminLTE/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using DevExtremeAspNetCoreApp1.Models
 
 @(Html.DevExtreme().DataGrid<SampleOrder>()
-    .AllowColumnResizing(true)
-    .AllowColumnReordering(true)
-    .ColumnAutoWidth(true)
-    .ColumnChooser(c => c
-        .Enabled(true)
-        .Title("Wybór kolumny")
-        .EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć"))
-    .ColumnFixing(c => c.Enabled(true))
-    .Columns(columns => {
-        columns.AddFor(m => m.OrderID)
-        .Alignment(HorizontalAlignment.Left);
-        columns.AddFor(m => m.OrderDate);
-        columns.AddFor(m => m.ShipCity);
-        columns.AddFor(m => m.ShipCountry);
-        columns.AddFor(m => m.CustomerName);
-    })
-    .DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
-    .Export(e => e
-        .Enabled(true)
-        .AllowExportSelectedData(true)
-        .Texts(t => t
-        .ExportAll("Eksportuj wszystkie dane")
-        .ExportSelectedRows("Eksportuj wybrane wiersze")))
-    .FilterRow(f => f.Visible(true))
-    .FocusedRowEnabled(true)
-    .Grouping(g => g.AutoExpandAll(false))
-    .GroupPanel(p => p
-    .Visible(true)
-    .EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny"))
-    .HeaderFilter(f => f.Visible(true))
-    .OnExporting("exporting")
-    .Pager(p => p
-        .Visible(true)
-        .DisplayMode(GridPagerDisplayMode.Full)
-        .ShowInfo(true)
-        .InfoText("Strona {0} z {1} ({2} obiektów)")
-        .ShowNavigationButtons(true))
-    .Paging(p => p.PageSize(10))
-    .RemoteOperations(true)
-        @* .SearchPanel(p =>
-            p.Visible(true)
-            .Placeholder("Szukaj...")) *@
-        @* .Selection(s => s.Mode(SelectionMode.Multiple)) *@
-    .ShowBorders(true)
-    .ShowColumnLines(true)
-    .ShowRowLines(true)
-    .StateStoring(s => s
-        .Enabled(true)
-        .Type(StateStoringType.Custom)
-        .StorageKey("dataGridState")
-        .CustomSave("omitFiltersOnSave")
-        .CustomLoad("loadStorage"))
-    .RowAlternationEnabled(true)
+.AllowColumnResizing(true)
+.AllowColumnReordering(true)
+.ColumnAutoWidth(true)
+.ColumnChooser(c => c
+.Enabled(true)
+.Title("Wybór kolumny")
+.EmptyPanelText("Przeciągnij kolumnę tutaj, żeby ją ukryć"))
+.ColumnFixing(c => c.Enabled(true))
+.Columns(columns => {
+columns.AddFor(m => m.OrderID)
+.Alignment(HorizontalAlignment.Left);
+columns.AddFor(m => m.OrderDate);
+columns.AddFor(m => m.ShipCity);
+columns.AddFor(m => m.ShipCountry);
+columns.AddFor(m => m.CustomerName);
+})
+.DataSource(d => d.Mvc().Controller("SampleData").LoadAction("Get").Key("OrderID"))
+.Export(e => e
+.Enabled(true)
+.AllowExportSelectedData(true)
+.Texts(t => t
+.ExportAll("Eksportuj wszystkie dane")
+.ExportSelectedRows("Eksportuj wybrane wiersze")))
+.FilterRow(f => f.Visible(true))
+.FocusedRowEnabled(true)
+.Grouping(g => g.AutoExpandAll(false))
+.GroupPanel(p => p
+.Visible(true)
+.EmptyPanelText("Przeciągnij tutaj nagłówek kolumny, aby pogrupować według tej kolumny"))
+.HeaderFilter(f => f.Visible(true))
+.OnExporting("exporting")
+.Pager(p => p
+.Visible(true)
+.DisplayMode(GridPagerDisplayMode.Full)
+.ShowInfo(true)
+.InfoText("Strona {0} z {1} ({2} obiektów)")
+.ShowNavigationButtons(true))
+.Paging(p => p.PageSize(10))
+.RemoteOperations(true)
+    @* .SearchPanel(p =>
+        p.Visible(true)
+        .Placeholder("Szukaj...")) *@
+    @* .Selection(s => s.Mode(SelectionMode.Multiple)) *@
+.ShowBorders(true)
+.ShowColumnLines(true)
+.ShowRowLines(true)
+.StateStoring(s => s
+.Enabled(true)
+.Type(StateStoringType.Custom)
+.StorageKey("dataGridState")
+.CustomSave("omitFiltersOnSave")
+.CustomLoad("loadStorage"))
+.RowAlternationEnabled(true)
 )
+
+<partial name="_TextBox" />
 
 @* Custom storage *@
 <script>
@@ -67,7 +69,7 @@
         if (state) {
             for (let i = 0; i < state.columns.length; i++) {
                 // Properties of stateStoring https://js.devexpress.com/DevExtreme/ApiReference/UI_Components/dxDataGrid/Configuration/stateStoring/
-                
+
                 // Removes the column's filter value displayed in the filter row.
                 state.columns[i].filterValue = null;
                 // Removes values selected in the column's header filter.
